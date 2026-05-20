@@ -78,7 +78,7 @@ export default function App() {
   const handleLogin = async () => {
     try {
       console.log("🟡 Mulai proses login...");
-      const res = await axios.post("https://backend_best.smktibazma.com/api/login", {
+      const res = await axios.post("https://backend-best.smktibazma.sch.id/api/login", {
         nis,
         password,
       });
@@ -160,7 +160,7 @@ export default function App() {
                       />
 
                       : <img
-                        src={`https://backend_best.smktibazma.com/uploads/${user.foto}`}
+                        src={`https://backend-best.smktibazma.sch.id/uploads/${user.foto}`}
                         width={"30px"}
                         height={"30px"}
                         className="rounded-circle me-2"

@@ -144,7 +144,7 @@ const EditSiswa = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://backend_best.smktibazma.com/api/siswa/${id}`
+          `https://backend-best.smktibazma.sch.id/api/siswa/${id}`
         );
         console.log("🔥 Full API response:", res.data);
         setSiswa({
@@ -211,7 +211,7 @@ const EditSiswa = () => {
     if (window.confirm("Apakah Anda yakin ingin menghapus pengalaman ini?")) {
       try {
         await axios.delete(
-          `https://backend_best.smktibazma.com/api/pengalaman/${pengalamanId}`
+          `https://backend-best.smktibazma.sch.id/api/pengalaman/${pengalamanId}`
         );
         alert("Pengalaman berhasil dihapus");
         await refreshSiswa();
@@ -227,7 +227,7 @@ const EditSiswa = () => {
     if (window.confirm("Apakah Anda yakin ingin menghapus proyek ini?")) {
       try {
         await axios.delete(
-          `https://backend_best.smktibazma.com/api/delproject/${projectId}`
+          `https://backend-best.smktibazma.sch.id/api/delproject/${projectId}`
         );
         alert("Proyek berhasil dihapus");
         await refreshSiswa();
@@ -257,7 +257,7 @@ const EditSiswa = () => {
       if (cvFile) fd.append("cv", cvFile);
 
       const response = await axios.put(
-        `https://backend_best.smktibazma.com/api/siswa/update/${id}`,
+        `https://backend-best.smktibazma.sch.id/api/siswa/update/${id}`,
         fd,
         {
           headers: {
@@ -269,7 +269,7 @@ const EditSiswa = () => {
       if (response.status === 200) {
         alert("Profil berhasil diperbarui!");
         const res = await axios.get(
-          `https://backend_best.smktibazma.com/api/siswa/${id}`
+          `https://backend-best.smktibazma.sch.id/api/siswa/${id}`
         );
         setSiswa(res.data.siswa);
 
@@ -305,7 +305,7 @@ const EditSiswa = () => {
       if (editingPengalaman) {
         // UPDATE
         await axios.put(
-          `https://backend_best.smktibazma.com/api/editpengalaman/${editingPengalaman}`,
+          `https://backend-best.smktibazma.sch.id/api/editpengalaman/${editingPengalaman}`,
           fd,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -315,7 +315,7 @@ const EditSiswa = () => {
       } else {
         // CREATE
         await axios.post(
-          "https://backend_best.smktibazma.com/api/pengalaman",
+          "https://backend-best.smktibazma.sch.id/api/pengalaman",
           fd
         );
         toast.success("Pengalaman berhasil ditambahkan");
@@ -344,7 +344,7 @@ const EditSiswa = () => {
       if (editingProject) {
         // UPDATE
         await axios.put(
-          `https://backend_best.smktibazma.com/api/project/${editingProject}`,
+          `https://backend-best.smktibazma.sch.id/api/project/${editingProject}`,
           fd,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -355,7 +355,7 @@ const EditSiswa = () => {
         const idProject = uuidv4();
         fd.append("id", idProject);
         await axios.post(
-          "https://backend_best.smktibazma.com/api/project/upload",
+          "https://backend-best.smktibazma.sch.id/api/project/upload",
           fd,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
@@ -415,7 +415,7 @@ const EditSiswa = () => {
                   src={
                     fotoFile
                       ? URL.createObjectURL(fotoFile)
-                      : `https://backend_best.smktibazma.com/uploads/${siswa.foto}`
+                      : `https://backend-best.smktibazma.sch.id/uploads/${siswa.foto}`
                   }
                   alt={siswa.name}
                   className="rounded-circle img-thumbnail shadow"
@@ -853,7 +853,7 @@ const EditSiswa = () => {
                                 className="btn btn-sm btn-free"
                                 onClick={() => {
                                   setSelectedFoto(
-                                    `https://backend_best.smktibazma.com/uploads/${item.foto}`
+                                    `https://backend-best.smktibazma.sch.id/uploads/${item.foto}`
                                   );
                                   setShowFotoModal(true);
                                 }}
@@ -889,7 +889,7 @@ const EditSiswa = () => {
                         <p className="card-text">{item.deskripsi}</p>
                         {item.foto && (
                           <img
-                            src={`https://backend_best.smktibazma.com/uploads/${item.foto}`}
+                            src={`https://backend-best.smktibazma.sch.id/uploads/${item.foto}`}
                             alt={item.name}
                             className="img-fluid mt-2 rounded"
                             style={{ maxHeight: "150px" }}
@@ -1028,7 +1028,7 @@ const EditSiswa = () => {
                       <div className="position-relative">
                         {item.foto ? (
                           <img
-                            src={`https://backend_best.smktibazma.com/uploads/${item.foto}`}
+                            src={`https://backend-best.smktibazma.sch.id/uploads/${item.foto}`}
                             className="card-img-top"
                             alt={item.name_project}
                             style={{ objectFit: "cover", height: "200px" }}

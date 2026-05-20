@@ -24,14 +24,14 @@ function AddPengalaman() {
 
   const fetchSiswa = async () => {
     const res = await axios.get(
-      "https://backend_best.smktibazma.com/api/getsiswa"
+      "https://backend-best.smktibazma.sch.id/api/getsiswa"
     );
     setSiswaList(res.data || []);
   };
 
   const fetchData = async () => {
     const res = await axios.get(
-      "https://backend_best.smktibazma.com/api/pengalaman"
+      "https://backend-best.smktibazma.sch.id/api/pengalaman"
     );
     setList(res.data || []);
   };
@@ -53,13 +53,13 @@ function AddPengalaman() {
     try {
       if (isEdit) {
         await axios.put(
-          `https://backend_best.smktibazma.com/api/editpengalaman/${formData.id}`,
+          `https://backend-best.smktibazma.sch.id/api/editpengalaman/${formData.id}`,
           data
         );
         alert("Pengalaman diperbarui");
       } else {
         await axios.post(
-          "https://backend_best.smktibazma.com/api/pengalaman",
+          "https://backend-best.smktibazma.sch.id/api/pengalaman",
           data
         );
         alert("Pengalaman ditambahkan");
@@ -91,7 +91,7 @@ function AddPengalaman() {
     if (window.confirm("Yakin ingin menghapus pengalaman ini?")) {
       try {
         await axios.delete(
-          `https://backend_best.smktibazma.com/api/pengalaman/${id}`
+          `https://backend-best.smktibazma.sch.id/api/pengalaman/${id}`
         );
         fetchData();
         alert("Data dihapus");

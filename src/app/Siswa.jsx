@@ -33,7 +33,7 @@ function SiswaByAngkatan() {
     instansi: [],
   });
 
-  const baseImageUrl = "https://backend_best.smktibazma.com/uploads/";
+  const baseImageUrl = "https://backend-best.smktibazma.sch.id/uploads/";
   const cardRefs = useRef([]);
 
   // Fetch student data
@@ -42,7 +42,7 @@ function SiswaByAngkatan() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "https://backend_best.smktibazma.com/api/getsiswa"
+          "https://backend-best.smktibazma.sch.id/api/getsiswa"
         );
         const sortedData = response.data.sort((a, b) => {
           if (a.angkatan !== b.angkatan) return a.angkatan - b.angkatan;

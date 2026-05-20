@@ -19,12 +19,12 @@ function SiswaDetail() {
   const [showFotoModal, setShowFotoModal] = useState(false);
   const [selectedFoto, setSelectedFoto] = useState(null);
 
-  const baseImageUrl = "https://backend_best.smktibazma.com/uploads/";
+  const baseImageUrl = "https://backend-best.smktibazma.sch.id/uploads/";
 
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `https://backend_best.smktibazma.com/api/siswa/${id}`
+        `https://backend-best.smktibazma.sch.id/api/siswa/${id}`
       );
       setSiswa(res.data.siswa);
       setProjects(res.data.projects);
@@ -166,7 +166,7 @@ function SiswaDetail() {
               <div className="d-flex flex-wrap gap-3 mb-4">
                 {siswa.cv && (
                   <a
-                    href={`https://backend_best.smktibazma.com/uploads/${siswa.cv}`}
+                    href={`https://backend-best.smktibazma.sch.id/uploads/${siswa.cv}`}
                     download
                     className="btn btn-white bg-white text-black px-4 rounded-pill"
                   >
@@ -179,7 +179,7 @@ function SiswaDetail() {
                     href={
                       siswa.link_porto.startsWith("http")
                         ? siswa.link_porto
-                        : `https://backend_best.smktibazma.com/uploads/${siswa.link_porto}`
+                        : `https://backend-best.smktibazma.sch.id/uploads/${siswa.link_porto}`
                     }
                     target="_blank"
                     rel="noopener noreferrer"
@@ -438,7 +438,7 @@ function SiswaDetail() {
                           className="btn btn-sm btn-free"
                           onClick={() => {
                             setSelectedFoto(
-                              `https://backend_best.smktibazma.com/uploads/${exp.foto}`
+                              `https://backend-best.smktibazma.sch.id/uploads/${exp.foto}`
                             );
                             setShowFotoModal(true);
                           }}

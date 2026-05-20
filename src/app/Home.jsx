@@ -56,7 +56,7 @@ function Home() {
 
   const nonPelajarScrollRef = useRef(null);
   const mitraRef = useRef(null);
-  const imageBaseUrl = 'https://backend_best.smktibazma.com/uploads/';
+  const imageBaseUrl = 'https://backend-best.smktibazma.sch.id/uploads/';
   const logos = [yakes, ptn, hulurokan, elnusa, pertamina, pgn, ptc, pertaminageo, retail, ssc, pertalife];
 
   const greetings = ['Welcome To', 'Selamat Datang', 'ようこそ', '환영합니다', 'Bienvenue'];
@@ -106,9 +106,9 @@ function Home() {
     const fetchData = async () => {
       try {
         const [siswaRes, projectsRes, testimoniRes] = await Promise.all([
-          axios.get('https://backend_best.smktibazma.com/api/getsiswa'),
-          axios.get('https://backend_best.smktibazma.com/api/projects'),
-          axios.get('https://backend_best.smktibazma.com/api/testimoni'),
+          axios.get('https://backend-best.smktibazma.sch.id/api/getsiswa'),
+          axios.get('https://backend-best.smktibazma.sch.id/api/projects'),
+          axios.get('https://backend-best.smktibazma.sch.id/api/testimoni'),
         ]);
 
         const siswaData = siswaRes.data.filter((s) => s.status === 'alumni');
@@ -251,7 +251,7 @@ function Home() {
     }
 
     try {
-      const res = await axios.post('https://backend_best.smktibazma.com/api/testimoni', newTestimoni);
+      const res = await axios.post('https://backend-best.smktibazma.sch.id/api/testimoni', newTestimoni);
       setTestimoniList((prev) => [...prev, res.data]);
       setNewTestimoni({ nama: '', instansi: '', pesan: '' });
       setShowTestimoniForm(false);

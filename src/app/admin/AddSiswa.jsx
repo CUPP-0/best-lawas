@@ -99,7 +99,7 @@ function AddSiswa() {
     if (window.confirm("Yakin ingin menghapus siswa ini?")) {
       try {
         await axios.delete(
-          `https://backend_best.smktibazma.com/api/siswa/${id}`
+          `https://backend-best.smktibazma.sch.id/api/siswa/${id}`
         );
         alert("Data berhasil dihapus.");
         fetchSiswa();
@@ -113,7 +113,7 @@ function AddSiswa() {
   /* ------------ fetch data ------------ */
   const fetchSiswa = async () => {
     const res = await axios.get(
-      "https://backend_best.smktibazma.com/api/getsiswa"
+      "https://backend-best.smktibazma.sch.id/api/getsiswa"
     );
     setSiswaList(res.data || []);
   };
@@ -158,12 +158,12 @@ function AddSiswa() {
     try {
       if (isEdit) {
         await axios.put(
-          `https://backend_best.smktibazma.com/api/siswa/update/${formData.id_lama}`,
+          `https://backend-best.smktibazma.sch.id/api/siswa/update/${formData.id_lama}`,
           fd
         );
         alert("Data siswa berhasil diperbarui.");
       } else {
-        await axios.post("https://backend_best.smktibazma.com/api/siswa", fd);
+        await axios.post("https://backend-best.smktibazma.sch.id/api/siswa", fd);
         alert("Siswa ditambahkan!");
       }
 

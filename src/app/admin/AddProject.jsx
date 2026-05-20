@@ -18,13 +18,13 @@ function AddProject() {
   const [isEdit, setIsEdit] = useState(false);
 
   const fetchProject = async () => {
-    const res = await fetch("https://backend_best.smktibazma.com/api/projects");
+    const res = await fetch("https://backend-best.smktibazma.sch.id/api/projects");
     const data = await res.json();
     setProjectList(data || []);
   };
 
   const fetchSiswa = async () => {
-    const res = await fetch("https://backend_best.smktibazma.com/api/getsiswa");
+    const res = await fetch("https://backend-best.smktibazma.sch.id/api/getsiswa");
     const data = await res.json();
     setSiswaList(data || []);
   };
@@ -53,13 +53,13 @@ function AddProject() {
 
     try {
       if (isEdit) {
-        await fetch(`https://backend_best.smktibazma.com/api/project/${generatedId}`, {
+        await fetch(`https://backend-best.smktibazma.sch.id/api/project/${generatedId}`, {
           method: "PUT",
           body: data,
         });
         alert("Project diperbarui!");
       } else {
-        await fetch("https://backend_best.smktibazma.com/api/project/upload", {
+        await fetch("https://backend-best.smktibazma.sch.id/api/project/upload", {
           method: "POST",
           body: data,
         });
@@ -100,7 +100,7 @@ function AddProject() {
   const handleDelete = async (id) => {
     if (window.confirm("Hapus project ini?")) {
       try {
-        await fetch(`https://backend_best.smktibazma.com/api/delproject/${id}`, {
+        await fetch(`https://backend-best.smktibazma.sch.id/api/delproject/${id}`, {
           method: "DELETE",
         });
         alert("Project dihapus.");

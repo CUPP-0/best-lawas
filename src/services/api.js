@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Api = axios.create({
     //set default endpoint API
-    baseURL: 'https://backend_best.smktibazma.com/'
+    baseURL: 'https://backend-best.smktibazma.sch.id/'
 })
 
 export default Api
